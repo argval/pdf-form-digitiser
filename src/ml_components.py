@@ -18,11 +18,13 @@ import re
 class PDFFormMLExtractor:
     def __init__(self, max_words=10000, max_len=100):
         """
-        Initialize ML components for PDF form extraction
+        Sets up the machine learning components for PDF form extraction.
+        
+        Think of this like preparing your toolkit before starting a project.
         
         Args:
-            max_words (int): Maximum number of words in vocabulary
-            max_len (int): Maximum sequence length for text processing
+            max_words (int): How many unique words we'll consider 
+            max_len (int): Maximum length of text we'll process
         """
         self.max_words = max_words
         self.max_len = max_len
@@ -37,13 +39,15 @@ class PDFFormMLExtractor:
     
     def preprocess_text(self, text):
         """
-        Advanced text preprocessing for ML models
+        Cleans up the text before feeding it to our ML models.
+        
+        It's like tidying up a messy workspace before starting work.
         
         Args:
-            text (str): Input text to preprocess
+            text (str): The raw text we want to clean up
         
         Returns:
-            str: Cleaned and normalized text
+            Processed text, ready for analysis
         """
         # Remove special characters and extra whitespaces
         text = re.sub(r'[^a-zA-Z0-9\s]', '', text)
@@ -52,13 +56,15 @@ class PDFFormMLExtractor:
     
     def prepare_training_data(self, json_dir):
         """
-        Prepare training data from JSON extraction results
+        Turns our JSON files into training data for the ML model.
+        
+        Imagine sorting through a pile of documents to find the most useful bits.
         
         Args:
-            json_dir (str): Directory containing extracted JSON files
+            json_dir (str): Where our extracted JSON files live
         
         Returns:
-            tuple: Prepared training data for ML models
+            Processed data ready for model training
         """
         all_texts = []
         all_labels = []
@@ -221,10 +227,12 @@ class PDFFormMLExtractor:
 class TransferLearningFeatureExtractor:
     def __init__(self, pretrained_model='simple'):
         """
-        Initialize transfer learning feature extractor
+        Sets up a feature extractor that can learn from existing knowledge.
+        
+        Like bringing in an expert who already knows some tricks of the trade.
         
         Args:
-            pretrained_model (str): Pretrained model to use
+            pretrained_model (str): Which pre-trained model to start with
         """
         self.pretrained_model = pretrained_model
         
@@ -235,13 +243,15 @@ class TransferLearningFeatureExtractor:
     
     def extract_features(self, texts):
         """
-        Extract advanced features using embedding
+        Pulls out the most interesting bits from our text.
+        
+        Think of this like a detective finding clues in a pile of documents.
         
         Args:
-            texts (list): List of texts to extract features from
+            texts (list): Texts we want to dig into
         
         Returns:
-            np.ndarray: Extracted features
+            The most meaningful features from the texts
         """
         # Tokenize texts
         self.tokenizer.fit_on_texts(texts)
@@ -257,14 +267,16 @@ class TransferLearningFeatureExtractor:
 # Utility functions for ML-enhanced extraction
 def enhance_extraction_with_ml(extraction_results, ml_extractor):
     """
-    Enhance extraction results with ML insights
+    Supercharges our extraction results with machine learning magic.
+    
+    We're taking our initial results and giving them a smart upgrade.
     
     Args:
-        extraction_results (dict): Original extraction results
-        ml_extractor (PDFFormMLExtractor): ML extractor instance
+        extraction_results (dict): The original data we extracted
+        ml_extractor (PDFFormMLExtractor): Our ML toolkit
     
     Returns:
-        dict: Enhanced extraction results
+        Enhanced results with additional insights and confidence
     """
     enhanced_results = extraction_results.copy()
     
