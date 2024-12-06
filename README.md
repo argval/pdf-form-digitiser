@@ -14,12 +14,6 @@ This project provides the following features:
 
 ## Technical Approach
 
-### Methodology
-- Utilising Tesseract OCR for initial text extraction
-- Apply machine learning models for field classification
-- Use TensorFlow and Keras for neural network-based form parsing
-- Implement error handling and data preprocessing
-
 ### Key Technologies
 - Python 3.12.4
 - TensorFlow 2.16.1
@@ -84,7 +78,7 @@ python -m demo
 - transformers==4.36.2
 - torch==2.1.2
 
-## How It Works
+## Methodology
 
 1. **PDF Input**: Convert PDFs to images
 2. **OCR Extraction**: Apply Tesseract for text recognition
