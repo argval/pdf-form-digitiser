@@ -1,0 +1,22 @@
+# PDF Form Digitization Requirements
+PyPDF2==3.0.1
+pandas==2.1.4
+pytesseract==0.3.10
+pdf2image==1.16.3
+email-validator==2.1.0
+phonenumbers==8.13.26
+tqdm==4.66.1
+tensorflow==2.16.1
+tf-keras==2.16.0
+Pillow==10.2.0
+opencv-python-headless==4.7.0.72
+python-dotenv==1.0.0
+
+# Machine Learning and NLP Dependencies
+scikit-learn==1.3.2
+transformers==4.36.2
+torch==2.1.2
+nltk==3.8.1
+spacy==3.7.2
+gensim==4.3.2
+sentence-transformers==2.5.1

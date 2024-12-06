@@ -1,0 +1,28 @@
+# Development Dependencies
+black==24.1.1
+flake8==6.1.0
+mypy==1.8.0
+pytest==7.4.4
+pytest-cov==4.1.0
+coverage==7.4.0
+pre-commit==3.6.0
+
+# Type Stubs
+types-requests==2.31.0
+types-python-dateutil==2.8.19
+
+# Documentation
+sphinx==7.2.6
+sphinx-rtd-theme==2.0.0
+
+# Debugging and Profiling
+ipdb==0.13.13
+memory-profiler==0.61.0
+
+# Code Quality
+pylint==3.0.3
+isort==5.13.2
+
+# ML Experiment Tracking
+mlflow==2.9.2
+wandb==0.16.2
