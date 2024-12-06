@@ -20,8 +20,6 @@ class PDFFormMLExtractor:
         """
         Sets up the machine learning components for PDF form extraction.
         
-        Think of this like preparing your toolkit before starting a project.
-        
         Args:
             max_words (int): How many unique words we'll consider 
             max_len (int): Maximum length of text we'll process
@@ -39,9 +37,7 @@ class PDFFormMLExtractor:
     
     def preprocess_text(self, text):
         """
-        Cleans up the text before feeding it to our ML models.
-        
-        It's like tidying up a messy workspace before starting work.
+        Cleans up the text before feeding it to our ML models
         
         Args:
             text (str): The raw text we want to clean up
@@ -57,8 +53,6 @@ class PDFFormMLExtractor:
     def prepare_training_data(self, json_dir):
         """
         Turns our JSON files into training data for the ML model.
-        
-        Imagine sorting through a pile of documents to find the most useful bits.
         
         Args:
             json_dir (str): Where our extracted JSON files live
@@ -189,7 +183,6 @@ class PDFFormMLExtractor:
         )
         
         # Text Classifier
-        # Note: This requires additional metadata preprocessing
         metadata = np.random.rand(len(X_train), 10)  # Placeholder metadata
         self.text_classifier = self.build_text_classifier()
         history_classifier = self.text_classifier.fit(
@@ -229,8 +222,6 @@ class TransferLearningFeatureExtractor:
         """
         Sets up a feature extractor that can learn from existing knowledge.
         
-        Like bringing in an expert who already knows some tricks of the trade.
-        
         Args:
             pretrained_model (str): Which pre-trained model to start with
         """
@@ -243,9 +234,7 @@ class TransferLearningFeatureExtractor:
     
     def extract_features(self, texts):
         """
-        Pulls out the most interesting bits from our text.
-        
-        Think of this like a detective finding clues in a pile of documents.
+        For extracting features from text
         
         Args:
             texts (list): Texts we want to dig into
@@ -267,9 +256,7 @@ class TransferLearningFeatureExtractor:
 # Utility functions for ML-enhanced extraction
 def enhance_extraction_with_ml(extraction_results, ml_extractor):
     """
-    Supercharges our extraction results with machine learning magic.
-    
-    We're taking our initial results and giving them a smart upgrade.
+    Enhance extraction results with ML insights
     
     Args:
         extraction_results (dict): The original data we extracted

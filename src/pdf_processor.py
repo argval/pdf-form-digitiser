@@ -73,14 +73,12 @@ class PDFFormDigitizer:
     def _advanced_extraction(self, ocr_text):
         # Enhanced text preprocessing
         def preprocess_text(text):
-            # Remove extra whitespaces, normalize line breaks
             text = re.sub(r'\s+', ' ', text)
             text = re.sub(r'\n+', '\n', text)
-            # Remove non-printable characters
             text = ''.join(char for char in text if char.isprintable())
             return text.strip()
 
-        # Intelligent text cleaning and filtering
+        # Text cleaning and filtering
         def clean_and_filter_lines(lines, section_name=None):
             # Global exclusion lists
             global_exclusions = {
@@ -109,7 +107,7 @@ class PDFFormDigitizer:
                 ]
             }
 
-            # Advanced filtering
+            # Filtering of lines extracted
             filtered_lines = []
             for line in lines:
                 # Normalize and clean line
@@ -142,7 +140,7 @@ class PDFFormDigitizer:
             
             return unique_lines
 
-        # Advanced section extraction configurations
+        # For extracting sections in the form
         section_configs = {
             'requestor_info': {
                 'patterns': [
@@ -222,7 +220,7 @@ class PDFFormDigitizer:
 
         extracted_data = {}
 
-        # Iterate through sections and extract data
+        # Iterates through each section and extract data
         for section_name, section_config in section_configs.items():
             # Try each extractor in order of priority
             for extractor in section_config.get('patterns', []):
@@ -285,7 +283,7 @@ class PDFFormDigitizer:
 
     def process_pdf(self, pdf_path):
         """
-        Enhanced PDF processing with optional ML components
+        PDF processing with optional ML components
         
         Args:
             pdf_path (str): Path to PDF file
