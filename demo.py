@@ -24,7 +24,7 @@ def analyze_extracted_data(output_dir):
     Args:
         output_dir (str): Directory containing extracted JSON files
     """
-    print("\n🔬 Advanced ML-Powered Data Analysis Report 📊")
+    print("\nAdvanced ML-Powered Data Analysis Report")
     
     # Initialize ML components
     ml_extractor = PDFFormMLExtractor()
@@ -50,7 +50,7 @@ def analyze_extracted_data(output_dir):
         with open(file_path, 'r') as f:
             form_data = json.load(f)
         
-        print(f"\n📄 ML Analysis for {json_file}:")
+        print(f"\nML Analysis for {json_file}:")
         print("----------------------------")
         
         # ML Section Analysis
@@ -93,18 +93,18 @@ def analyze_extracted_data(output_dir):
         all_forms_data[json_file] = form_data
     
     # Advanced Reporting
-    print("\n🤖 Machine Learning Insights:")
+    print("\n Machine Learning Insights:")
     print("----------------------------")
     
     # Section Prediction Analysis
-    print("\n📋 Section Prediction Distribution:")
+    print("\n Section Prediction Distribution:")
     for filename, predictions in ml_insights['section_predictions'].items():
         print(f"\n{filename}:")
         for original_section, predicted_section in predictions.items():
             print(f"  - {original_section}: Predicted as {predicted_section}")
     
     # Confidence Scores
-    print("\n📊 Confidence Scores:")
+    print("\nConfidence Scores:")
     for filename, scores in ml_insights['confidence_scores'].items():
         print(f"\n{filename}:")
         for section, confidence in scores.items():
@@ -133,7 +133,7 @@ def main():
 
     try:
         # 1. Batch Processing with ML
-        print("🔍 Starting PDF Form Processing with ML 🔍")
+        print("Starting PDF Form Processing with ML...")
         digitizer.process_pdf_batch()
 
         # 2. Advanced ML-Powered Data Analysis
